@@ -1,0 +1,36 @@
+plugins {/*we declare we ant to use the java plugin for gradle we can use different plugins
+which allows us to add more and different tasks thath can be performed*/
+    //id 'java' we comment the java plugin because we prefer to use the application plugin
+    //which includes by default all the tasks included in java plugin
+    id 'application'
+}
+/*we can see here the artifact properties which allows us to find our project as an
+Artifcat in a maven repository
+ */
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+/* we have dependences to junit 4.12*/
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+/* we add a configuration to make our jar file executable by specifing the name of our main class as
+* an attribute: this part is comment because in a second moment we decide to use the application plugin
+* The configuration of the jar is not needed anymore
+jar{
+    manifest{
+        attributes(
+                'Main-Class':'dssc.hello.Main'
+        )
+    }
+}*/
+/*By usign the application plugin we nedd now to specify the name of our main class
+in the following way
+ */
+application{
+    mainClassName = 'dssc.hello.Main'
+}
