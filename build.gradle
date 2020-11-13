@@ -32,5 +32,5 @@ jar{
 in the following way
  */
 application{
-    mainClassName = 'dssc.hello.Main'
+    mainClass = 'dssc.hello.Main'
 }
